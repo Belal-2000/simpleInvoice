@@ -1,0 +1,344 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+:root {
+    --main-color: rgb(0, 49, 155);
+}
+
+body {
+    padding: 30px;
+    font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+        "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+body > header {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 15px;
+    font-weight: bold;
+    color: var(--main-color);
+}
+
+body > main {
+    margin-top: 30px;
+    border: 3px solid var(--main-color);
+    padding-left: 35px;
+    padding-block: 10px;
+    padding-right: 10px;
+    position: relative;
+    min-height: 50vh;
+}
+
+.first-side {
+    color: var(--main-color);
+    position: absolute;
+    top: 50%;
+    left: 0px;
+    transform: rotate(-90deg) translatey(-270%);
+}
+
+body > main::before {
+    content: "";
+    position: absolute;
+    top: 0px;
+    left: 25px;
+    height: 100%;
+    width: 2.5px;
+    background-color: var(--main-color);
+}
+
+.input-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    color: var(--main-color);
+}
+
+.input-set {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 5px;
+    position: relative;
+    font-weight: bold;
+}
+
+.input-set input {
+    flex: 1;
+    border: none;
+    border-bottom: 2px solid var(--main-color);
+}
+
+.input-set input:focus {
+    outline: none;
+}
+
+.input-set::after {
+    content: "النص المطلوب .";
+    position: absolute;
+    top: 0px;
+    direction: rtl;
+    height: 100%;
+    width: 100%;
+}
+
+.input-set:first-of-type::after {
+    content: "رقم امر الشراء :";
+}
+
+/* you can change all of the placeHolder text using this method */
+/* .input-set:nth-last-of-type(numper of input "EX:2")::after{
+    content: "رقم امر الشراء :";
+} */
+
+.check-set {
+    display: flex;
+    position: relative;
+    gap: 20px;
+    margin-top: 15px;
+    width: 50%;
+    margin-left: auto;
+}
+.check-set > p {
+    position: absolute;
+    top: 0;
+    left: -100%;
+    font-weight: bold;
+    color: var(--main-color);
+}
+
+.check span {
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    border: 1px solid var(--main-color);
+}
+
+.check {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+    text-align: center;
+    color: var(--main-color);
+}
+
+.check-title {
+    margin-top: 10px;
+    color: var(--main-color);
+    font-weight: bold;
+    padding-left: 15px;
+    width: 50%;
+    margin-left: auto;
+}
+
+.check-title + .check-set {
+    margin-top: 5px;
+    gap: 75px;
+}
+
+.grid-table {
+    margin-top: 15px;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(10 , 1fr);
+    color: var(--main-color);
+    font-weight: bold;
+    min-height: 70vh;
+    margin-left: -10px;
+    margin-right: -12px;
+}
+
+.box-1{
+    border: 2px solid var(--main-color);
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 1;
+    grid-row-end: 2;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 5px;
+}
+.box-2{
+    border: 2px solid var(--main-color);
+    border-left:0px;
+    grid-column-start: 2;
+    grid-column-end: 9;
+    grid-row-start: 1;
+    grid-row-end: 2;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 5px;
+    padding: 0 75px;
+}
+.box-3{
+    border: 2px solid var(--main-color);
+    border-left:0px;
+    grid-column-start: 9;
+    grid-column-end: 10;
+    grid-row-start: 1;
+    grid-row-end: 2;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 5px;
+    padding-inline: 10px;
+
+}
+.box-4{
+    border: 2px solid var(--main-color);
+    border-left:0px;
+    grid-column-start: 10;
+    grid-column-end: 11;
+    grid-row-start: 1;
+    grid-row-end: 2;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 5px;
+
+}
+.box-5{
+    border: 2px solid var(--main-color);
+    border-left:0px;
+    grid-column-start: 11;
+    grid-column-end: 13;
+    grid-row-start: 1;
+    grid-row-end: 2;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 5px;
+    padding-inline: 10px;
+}
+
+.box-6{
+    border: 2px solid var(--main-color);
+    border-top: 0px;
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 2;
+    grid-row-end: 11;
+}
+.box-7{
+    border: 2px solid var(--main-color);
+    border-left:0px;
+    border-top: 0px;
+    grid-column-start: 2;
+    grid-column-end: 9;
+    grid-row-start: 2;
+    grid-row-end: 11;
+}
+.box-8{
+    border: 2px solid var(--main-color);
+    border-left:0px;
+    border-top: 0px;
+    grid-column-start: 9;
+    grid-column-end: 10;
+    grid-row-start: 2;
+    grid-row-end: 8;
+}
+.box-9{
+    border: 2px solid var(--main-color);
+    border-left:0px;
+    border-top: 0px;
+    grid-column-start: 10;
+    grid-column-end: 11;
+    grid-row-start: 2;
+    grid-row-end: 8;
+    position: relative;
+}
+.box-9::after{
+    content: "";
+    position: absolute;
+    width: 2px;
+    height: 100%;
+    top: 0;
+    right: 35px;
+    background-color: var(--main-color);
+}
+.box-10{
+    border: 2px solid var(--main-color);
+    border-left:0px;
+    border-top: 0px;
+    grid-column-start: 11;
+    grid-column-end: 13;
+    grid-row-start: 2;
+    grid-row-end: 8;
+    position: relative;
+}
+
+.box-10::after{
+    position: absolute;
+    top: 0;
+    right: 40px;
+    content: "";
+    width: 2px;
+    height: 100%;
+    background-color: var(--main-color);
+}
+
+.box-11{
+    border: 2px solid var(--main-color);
+    border-left:0px;
+    border-top: 0px;
+    grid-column-start: 9;
+    grid-column-end: 11;
+    grid-row-start: 8;
+    grid-row-end: 11;
+}
+.box-11 > div , .box-12 > div{
+    padding-right: 5px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    flex-direction: column;
+    height: 37.5%;
+    border-bottom: 2px solid var(--main-color);
+    font-size: small;
+}
+
+.box-11 > div:nth-of-type(2) , .box-12 > div:nth-of-type(2){
+    height: 27.5%;
+}
+.box-11 > div:last-of-type , .box-12 > div:last-of-type{
+    border-bottom: none;
+}
+
+.box-12{
+    border: 2px solid var(--main-color);
+    border-left:0px;
+    border-top: 0px;
+    grid-column-start: 11;
+    grid-column-end: 13;
+    grid-row-start: 8;
+    grid-row-end: 11;
+    position: relative;
+}
+
+.box-12::after{
+    position: absolute;
+    top: 0;
+    right: 40px;
+    content: "";
+    width: 2px;
+    height: 100%;
+    background-color: var(--main-color);
+}
+
